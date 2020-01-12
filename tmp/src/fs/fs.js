@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('tmp/src/fs/fs')
 
 let textFromNewFile;
 fs.readFile('hello.text', 'utf-8',(err, data) => {

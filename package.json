@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node src/app.js first second third",
-    "http": "nodemon src/http.js"
+    "start": "node tmp/src/app.js first second third",
+    "http": "nodemon tmp/src/http.js"
   },
   "dependencies": {
     "express": "^4.17.1",

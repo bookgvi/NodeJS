@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('tmp/src/fs/fs')
 
 const res = fs.readFileSync('./hello.text', 'utf-8')
 console.log('Синхронная функция для чтения из файла:\n', res)

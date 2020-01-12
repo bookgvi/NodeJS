@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('tmp/src/fs/fs')
 
 const fname = 'stream.file'
 

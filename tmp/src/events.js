@@ -1,4 +1,4 @@
-const Events = require('events');
+const Events = require('tmp/src/events');
 
 const Event = function() {}
 Event.prototype = Object.create(new Events(), {

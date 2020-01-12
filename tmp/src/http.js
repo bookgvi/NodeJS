@@ -1,4 +1,4 @@
-const http = require('http')
+const http = require('tmp/src/http')
 
 http.createServer((request, response) => {
   response.end('Hello, NodeJS! ')
