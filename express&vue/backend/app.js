@@ -7,6 +7,9 @@ const statusOK = 200;
 const statusNotFound = 404;
 
 const server = express();
+
+server.use(express.static(`${__dirname}/assets`))
+
 server.get('/', (req, res) => {
   res.statusCode = statusOK;
   res.header('Content-type', 'text/html; charset=utf-8;')
