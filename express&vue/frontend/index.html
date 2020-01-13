@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Simple Vue Project</title>
+</head>
+<body>
+<div id="app" class="container m-5">
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <h3>{{ message }}</h3>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <button-counter></button-counter>
+    </div>
+  </div>
+</div>
+
+<script>
+  Vue.component('ButtonCounter', {
+    name: 'btnCounterComponent',
+    template: `
+      <div>
+        <span class="">Click this:</span>
+        <button @click="hClick">{{ counter }}</button>
+      </div>
+    `,
+    data: () => ({
+      counter: 0
+    }),
+    methods: {
+      hClick () {
+        this.counter++
+      }
+    }
+  })
+
+  const vm = new Vue({
+    el: '#app',
+    data: () => ({
+      message: 'Holly, Vue!!!'
+    })
+  })
+
+</script>
+</body>
+</html>
