@@ -14,6 +14,16 @@ const server = express();
 * */
 server.use(express.static(`${__dirname}/assets`))
 
+/*
+* Middleware для логирования запросов
+* */
+server.use((req, res, next) => {
+  const now = new Date();
+  const dataLog = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}.${now.getMilliseconds()} - ${req.method} "${req.url}" ${req.get('user-agent')}`
+  const fileName = `${now.getFullYear()}${now.getMonth() + 1}${now.getDate()}.log`
+  fs.appendFile(fileName, `${dataLog}\n`, () => {})
+  next();
+})
 server.get('/', (req, res) => {
   res.statusCode = statusOK;
   res.header('Content-type', 'text/html; charset=utf-8;')
